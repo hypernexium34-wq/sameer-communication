@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAMEER COMMUNICATION</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #ff7a00;
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #ff7a00;
+        }
+
+        .hero {
+            padding: 80px 8%;
+            text-align: center;
+            background: linear-gradient(135deg, #111827, #374151);
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff7a00;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .products {
+            padding: 50px 8%;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 32px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .card .icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #ff7a00;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }.search-box {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    width: 80%;
+    max-width: 500px;
+    padding: 15px 20px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 16px;
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SAMEER COMMUNICATION</h1>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Mobile Repairing Items</h2>
+
+    <p>Quality tools and accessories for mobile repairing.</p>
+
+    <a href="#products" class="btn">View Products</a>
+</section>
+
+<section class="products" id="products">
+
+    <h2>Our Products</h2>
+    <div class="search-box">
+    <input type="text" placeholder="Search products...">
+</div>
+
+    <div class="product-grid">
+
+        <div class="product-grid">
+
+    <div class="card">
+        <div class="icon">🔧</div>
+        <h3>Mobile Repairing Tool Kit</h3>
+        <p>Complete tool kit for mobile repairing.</p>
+        <div class="price">₹599</div>
+        <a href="#contact" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+        <div class="icon">🔋</div>
+        <h3>Mobile Battery</h3>
+        <p>Replacement batteries for smartphones.</p>
+        <div class="price">₹399</div>
+        <a href="#contact" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+        <div class="icon">📱</div>
+        <h3>Mobile Display</h3>
+        <p>Quality replacement display parts.</p>
+        <div class="price">₹799</div>
+        <a href="#contact" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Fast Charger</h3>
+        <p>Fast charging adapters and accessories.</p>
+        <div class="price">₹299</div>
+        <a href="#contact" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+        <div class="icon">🔌</div>
+        <h3>USB Charging Cable</h3>
+        <p>Durable charging and data cables.</p>
+        <div class="price">₹149</div>
+        <a href="#contact" class="btn">Buy Now</a>
+    </div>
+
+    <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>Soldering Iron</h3>
+        <p>Useful tool for electronic repairing work.</p>
+        <div class="price">₹449</div>
+        <a href="#contact" class="btn">Buy Now</a>
+    </div>
+
+</div>
+
+</section>
+
+<footer id="contact">
+    <p>© 2026 SAMEER COMMUNICATION</p>
+    <p>Mobile Repairing Items & Accessories</p>
+</footer>
+
+</body>
+<script>
+function searchProducts() {
+    let input = document.querySelector(".search-box input").value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(function(card) {
+        let name = card.querySelector("h3").textContent.toLowerCase();
+
+        if (name.includes(input)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+document.querySelector(".search-box input").addEventListener("keyup", searchProducts);
+</script>
+</html>
